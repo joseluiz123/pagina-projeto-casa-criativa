@@ -1,0 +1,241 @@
+/*
+
+BOX 
+conteudo da caixa
+
+Espaçamentos
+Posicionamentos
+Bordas
+Preenchimento
+
+*/
+
+body {
+    background-color: #e5e5e5;
+
+    color: #24282b;
+
+    margin: 0; /*elimina a margin do body pois o navegador já possui uma margin estabelecida para a página*/
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hide {
+    display: none;
+}
+
+a {
+    color: #ff5e84;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p, .description {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+}
+
+#container {
+    width: 90%; /*estabelece um limite de fluidez para a pagina ---- caso ao ajustar a tela fique com menos de 980 pixels, o conteudo da pagina nao encostara na borda da tela do navegador em 90%*/
+
+    max-width: 900px; /*este parametro define o tamanho do conteudo real da pagina em pixels ----- o que sobrar dos pixels sera inserido uma margin*/
+
+    margin: 40px auto;
+
+    display: flex; /*faz com que os blocos filhos fiquemn juntos*/
+}
+
+#intro {
+    width: 300px;
+    margin-right: 20px;
+}
+
+#buttons {
+    margin-bottom: 32px;
+}
+
+main {
+    margin: 32px 0;
+}
+
+button {
+    color: #ff5e84;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    background: none;
+    cursor: pointer; /*cursor vira um ponteiro ao passar pelos botões*/
+    outline: none; /*Retira o outline ao clicar no botão*/
+}
+
+button:hover {
+    text-decoration: underline;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 32px;
+
+}
+
+button.fat {
+    color: white;
+    background-color: #ff5e84;
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    box-shadow: 0px 8px 16px rgba(255,0,92,0.16)
+}
+
+button.fat:hover {
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #777;
+}
+
+footer a {
+    opacity: 0.7;
+}
+
+.ideia {
+    display: flex;
+    margin-bottom: 32px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 4px 16px -8px rgba(1,1,1,0.2)
+}
+
+.ideia img {
+    width: 60px;
+    height: 60px;
+
+    margin-right: 32px;
+}
+
+.ideia h3 {
+    margin: 0;
+}
+
+.ideia p {
+    margin: 8px 0;
+    color: #777;
+}
+
+.ideia .description {
+    margin: 16px 0;
+}
+
+/* Modal */
+
+#modal {
+    background: #ff5e84;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    transition: 400ms;
+}
+
+#modal .content {
+    /*margin-top: 128px;*/
+    color: white;
+}
+
+#modal .content h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#modal form {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.content form div:nth-child(3),
+.content form div:nth-child(4),
+.content form div:nth-child(5) {
+    grid-column: span 2;
+}
+
+form textarea,
+form input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box; /* Quando colocamos o box-sizing: border-box; ele faz com que os 12px dos padding estejam dentro dos 100%                          do width, fazendo com que não ultrapasse a borda e estrapole um item em cima do outro*/
+    border-radius: 6px;
+    border: 1px solid rgba(141,25,52,0.5);
+    outline: none;
+    font-size: 16px;
+}
+
+form label {
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.8px;
+}
+
+form a {
+    width: 150px;
+    height: 40px;
+    background-color: rgba(255,255,255, 0.1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    align-self: end;
+    transition: 400ms;
+}
+
+form a:hover {
+    background-color: #fff;
+    color: #ff5e84;
+    text-decoration: none;
+}
+
+form button {
+    background: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 32px;
+    grid-column: 2;
+    justify-self: end;
+    transition: 400ms;
+}
+
+form button:hover {
+    background-color: #0984e3;
+    color: white;
+    text-decoration: none;
+}
+
+#modal.hide {
+    opacity: 0;
+    visibility: hidden;
+}
