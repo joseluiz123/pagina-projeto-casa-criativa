@@ -10,6 +10,8 @@ Preenchimento
 
 */
 
+/* GLOBAL */
+
 body {
     background-color: #e5e5e5;
 
@@ -18,6 +20,10 @@ body {
     margin: 0; /*elimina a margin do body pois o navegador já possui uma margin estabelecida para a página*/
 
     font-family: 'Montserrat', sans-serif;
+}
+
+body.hideScroll {
+    overflow: hidden;
 }
 
 .hide {
@@ -40,6 +46,28 @@ p, .description {
     letter-spacing: 0.1px;
 }
 
+.button {
+    color: white;
+    background-color: #ff5e84;
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 400ms;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(255,0,92,0.16)
+}
+
+.button:hover {
+    background-color: #0984e3;
+    text-decoration: none;
+}
+
+/* Padrão */
+
 #container {
     width: 90%; /*estabelece um limite de fluidez para a pagina ---- caso ao ajustar a tela fique com menos de 980 pixels, o conteudo da pagina nao encostara na borda da tela do navegador em 90%*/
 
@@ -52,7 +80,7 @@ p, .description {
 
 #intro {
     width: 300px;
-    margin-right: 20px;
+    margin-right: 64px;
 }
 
 #buttons {
@@ -84,19 +112,6 @@ button:hover {
     justify-content: space-evenly;
     margin-bottom: 32px;
 
-}
-
-button.fat {
-    color: white;
-    background-color: #ff5e84;
-    width: 150px;
-    height: 40px;
-    border-radius: 6px;
-    box-shadow: 0px 8px 16px rgba(255,0,92,0.16)
-}
-
-button.fat:hover {
-    text-decoration: none;
 }
 
 footer {
@@ -147,14 +162,20 @@ footer a {
     background: #ff5e84;
     position: absolute;
     top: 0;
-    width: 100vw;
-    height: 100vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     transition: 400ms;
 }
 
+#modal.addScroll {
+    overflow: auto;
+}
+
 #modal .content {
+    margin-top: 15%;
     /*margin-top: 128px;*/
     color: white;
 }
@@ -167,7 +188,7 @@ footer a {
 #modal form {
     width: 80%;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 15%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -238,4 +259,67 @@ form button:hover {
 #modal.hide {
     opacity: 0;
     visibility: hidden;
+}
+
+/*IDEIA.HTML*/
+
+#page-ideas #container {
+    display: block;
+}
+
+#page-ideas header {
+    display: flex;
+    justify-content: space-between
+}
+
+#page-ideas nav {
+    align-items: center;
+    display: flex;
+}
+
+#page-ideas nav li {
+    list-style-type: none;
+    margin-right: 16px;
+}
+
+#page-ideas nav li a {
+    color: #24282b;
+}
+
+#page-ideas nav li a.button {
+    color: white;
+}
+
+#page-ideas nav li:last-child {
+    margin: 0;
+}
+
+section#title {
+    text-align: center;
+}
+
+section#title p {
+    opacity: 0.7;
+    margin: 0;
+}
+
+section#title h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+section#ideas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+section#ideas .ideia {
+    margin: 0;
+}
+
+section#ideas,
+section#title,
+footer {
+    margin-top: 64px;
 }
